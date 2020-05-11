@@ -77,11 +77,11 @@ router.post('/recipes', requireToken, (req, res, next) => {
 router.patch('/recipes/:id', requireToken, removeBlanks, (req, res, next) => {
   // if the client attempts to change the `owner` property by including a new
   // owner, prevent that by deleting that key/value pair
-  delete req.body.example.owner
+  delete req.body.recipe.owner
 
   Recipe.findById(req.params.id)
     .then(handle404)
-    .then(example => {
+    .then(recipe => {
       // pass the `req` object and the Mongoose record to `requireOwnership`
       // it will throw an error if the current user isn't the owner
       requireOwnership(req, recipe)
