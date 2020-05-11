@@ -1,9 +1,11 @@
-# Ex: TOKEN=tokengoeshere ID=idgoeshere sh curl-scripts/examples/show.sh
+#!/bin/sh
 
-curl "http://localhost:4741/examples/${ID}" \
+API="http://localhost:4741"
+URL_PATH="/examples"
+
+curl "${API}${URL_PATH}/${ID}" \
   --include \
   --request GET \
-  --header "Content-Type: application/json" \
-  --header "Authorization: Token token=${TOKEN}" \
+  --header "Authorization: Bearer ${TOKEN}"
 
 echo

@@ -1,6 +1,9 @@
 #!/bin/bash
 
-curl "http://localhost:4741/sign-up" \
+API="http://localhost:4741"
+URL_PATH="/sign-up"
+
+curl "${API}${URL_PATH}" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \

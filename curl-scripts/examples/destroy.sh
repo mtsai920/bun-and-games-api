@@ -1,8 +1,11 @@
-# Ex: ID=idgoeshere TOKEN=tokengoeshere sh curl-scripts/examples/destroy.sh
+#!/bin/bash
 
-curl "http://localhost:4741/examples/${ID}" \
+API="http://localhost:4741"
+URL_PATH="/examples"
+
+curl "${API}${URL_PATH}/${ID}" \
   --include \
   --request DELETE \
-  --header "Authorization: Token token=${TOKEN}" \
+  --header "Authorization: Bearer ${TOKEN}"
 
 echo
