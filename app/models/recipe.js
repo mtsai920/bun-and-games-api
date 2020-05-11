@@ -13,6 +13,10 @@ const recipeSchema = new mongoose.Schema({
     type: Array,
     required: true
   },
+  instructions: {
+    type: String,
+    required: true
+  },
   owner: {
   type: mongoose.Schema.Types.ObjectId,
   ref: 'User',
@@ -20,4 +24,4 @@ const recipeSchema = new mongoose.Schema({
   }
 })
 
-module.exports = mognoose.model('Recipe', recipeSchema)
+module.exports = mongoose.model('Recipe', recipeSchema)
